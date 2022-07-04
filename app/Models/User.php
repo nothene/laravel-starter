@@ -9,5 +9,22 @@ class User extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email', 'password'];
+    protected $table = 'users';
+
+    protected $primaryKey = 'id';
+
+    public $incrementing = true;
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = true;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
 }
